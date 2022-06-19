@@ -1,0 +1,92 @@
+let array = [
+  { name: "may", height: 160, gender: "femal", mass: 55, eyecolor: "black" },
+  {
+    name: "mohammed",
+    height: 170,
+    gender: "male",
+    mass: 80,
+    eyecolor: "brouwn",
+  },
+  { name: "Ahmad", height: 165, gender: "male", mass: 110, eyecolor: "grey" },
+  { name: "tala", height: 158, gender: "femal", mass: 45, eyecolor: "blue" },
+  { name: "saleh", height: 180, gender: "male", mass: 85, eyecolor: "green" },
+  { name: "manar", height: 200, gender: "femal", mass: 54, eyecolor: "black" },
+];
+console.log("___________________map1__________________");
+//Map
+//map1
+let name_height = array.map(function (params) {
+  return [params.name, params.height];
+});
+console.log(name_height);
+console.log("______________________map2_______________");
+//map2
+let allname = array.map(function (params) {
+  return params.name;
+});
+console.log(allname);
+console.log("_______________________REDUCE1______________");
+//REDUCE
+//REDUCE1
+let totalmass = array.reduce(function (previousValue, curentValue) {
+  return previousValue + curentValue.mass;
+}, 0);
+console.log(totalmass);
+console.log("________________________REDUCE2_____________");
+//REDUCE2
+let charactercount = array.reduce(function (previousValue, curentValue) {
+  return previousValue + curentValue.name.length;
+}, 0);
+console.log(charactercount);
+console.log("____________________________FILTER1_________");
+// FILTER
+//filter1
+let massgreaterthan100 = array.filter(function (params) {
+  return params.mass > 100;
+});
+console.log(massgreaterthan100);
+console.log("__________________________FILTER2____________________");
+//filter1
+let filterfemal = array.filter(function (params) {
+  return params.gender == "femal";
+});
+console.log(filterfemal);
+console.log("___________________________SORT1_______________________");
+//SORT
+//sort1
+let sortbyname = array.sort((a, b) => {
+  return a.name.localeCompare(b.name);
+});
+console.log(sortbyname);
+console.log("__________________________SORT2_________________");
+//sort2
+let sortbygender = array.sort((a, b) => {
+  return a.gender.localeCompare(b.gender);
+});
+console.log(sortbygender);
+console.log("_______________________EVERY1______________");
+//EVERY
+//EVERY1
+let everyblueeyes = array.every(function (params) {
+  return params.eyecolor == "blue";
+});
+console.log(everyblueeyes);
+console.log("________________________EVERY2_____________");
+//EVERY2
+let everymale = array.every(function (params) {
+  return params.gender == "male";
+});
+console.log(everymale);
+console.log("_________________________SOME1____________");
+//SOME
+//SOME1
+let somemale = array.some(function (params) {
+  return params.gender == "male";
+});
+console.log(somemale);
+console.log("_________________________SOME2____________");
+//SOME2
+let somemasslessthan50 = array.some(function (params) {
+  return params.mass < 50;
+});
+console.log(somemasslessthan50);
